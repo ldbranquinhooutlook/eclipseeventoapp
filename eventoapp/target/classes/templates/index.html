@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+      
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid powderblue;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: powderblue;
+}
+</style>
+      
+<head>
+<title>Lista de Eventos</title></head>
+
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+<body>
+
+<h3><p align = "center" style="background-color:powderblue;">Lista de Eventos</p></h3>
+<h1>
+<a href="/cadastrarEvento" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar Evento</a>
+</h1>
+
+<table class="container">
+<thead>
+	<tr >
+		<th style="background-color:powderblue;">Nome</th>
+		<th style="background-color:powderblue;">Local</th>
+		<th style="background-color:powderblue;">Data</th>
+		<th style="background-color:powderblue;">Horário</th>
+		<th style="background-color:powderblue;">Deletar</th>
+	</tr>
+</thead>
+
+	<tbody>
+		<tr th:each="evento : ${eventos}">
+
+			<td><a th:href="${(#mvc.url('EC#detalhesEvento').arg(0,evento.codigo)).build()}"><span th:text="${evento.nome}"></span></a></td>
+			<td><span th:text="${evento.local}"></span></td>
+			<td><span th:text="${evento.data}"></span></td>
+			<td><span th:text="${evento.horario}"></span></td>
+			<td><a class="waves-effect waves-light btn-small" th:href="${(#mvc.url('EC#deletarEvento').arg(0, evento.codigo)).build()}"</a></td>
+			
+		</tr>
+	</tbody>
+
+
+</table>
+
+
+     <!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+
+
+</body>
+</html>

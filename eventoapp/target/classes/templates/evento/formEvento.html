@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+	<head>
+		<title>Cadastro de Eventos</title>
+   		<!--Import Google Icon Font-->
+   		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+   		<!--Import materialize.css-->
+   		<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+   		<!--Let browser know website is optimized for mobile-->
+   		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	</head>
+	<body>
+		<h3><p align = "center" style="background-color:powderblue;">Cadastro de Eventos</p></h3>
+		<a href="/eventos" class="waves-effect waves-light btn"><i class="material-icons left">dehaze</i>Lista de Eventos</a>
+		<form class="container" method="POST">
+			<b>Nome:</b><input type="text" value="" name="nome" style="color:blue;"/>
+			<b>Local:</b><input type="text" value="" name="local" style="color:blue;"/>
+			<b>Data:</b><input type="date" value="" name="data" style="color:blue;"/>
+			<b>Horário:</b><input type="time" value="" name="horario" style="color:blue;"/>
+			<button type="submit" class="waves-effect waves-light btn">Salvar</button>
+		</form>
+     <!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+</body>
+</html>
