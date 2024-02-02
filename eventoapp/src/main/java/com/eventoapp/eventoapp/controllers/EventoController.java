@@ -77,6 +77,9 @@ public class EventoController {
 		convidado.setEvento(evento);
 		cr.save(convidado);
 		attributes.addFlashAttribute("mensagem", "Sucesso!");
+		
+		String teste = "123";
+		
 		return "redirect:/{codigo}";
 		}
 		
